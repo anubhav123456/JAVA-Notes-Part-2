@@ -43,23 +43,22 @@ Assume **Strings were mutable**.
 
 Now consider:
 
-```java
-name1 = name1.concat("Foo");
-```
 
-If `"Alex"` were mutable, Java would modify the **same object** in memory.
+
+If `"Jamila"` were mutable, Java would modify the **same object** in memory.
 
 ### What would happen then?
 
-* `"Alex"` becomes `"AlexFoo"`
-* Since `name1`, `name2`, `name3` all reference the **same object**
+* `"Jamila"` becomes `"Foo"`
+* Since `name1`, `name3`, `name4` all reference the **same object**
 * **All references would see the change**
 
 That means:
 
 ```java
-System.out.println(name2); // AlexFoo ❌
-System.out.println(name3); // AlexFoo ❌
+System.out.println(name1); // Foo ❌
+System.out.println(name3); // Foo ❌
+System.out.println(name4); // Foo ❌
 ```
 
 ### 🚨 This is dangerous
@@ -78,26 +77,26 @@ To avoid this problem, Java makes **Strings immutable**.
 
 ---
 
-## 4️⃣ What Actually Happens (Second Diagram Explanation)
+## 4️⃣ What Actually Happens
 
 Consider this code again:
 
 ```java
-String name1 = "Alex";
+String name1 = "Jamila";
 name1 = name1.concat("Foo");
 ```
 
 ### What Java really does:
 
-❌ Java does **NOT** change `"Alex"`
+❌ Java does **NOT** change `"Jamila"`
 ✅ Java creates a **new String object**
 
 Steps:
 
-1. `"Alex"` remains unchanged in the String Pool
-2. A new String object `"AlexFoo"` is created
-3. `name1` now points to `"AlexFoo"`
-4. Other references (`name2`, `name3`) still point to `"Alex"`
+1. `"Jamila"` remains unchanged in the String Pool
+2. A new String object `"JamilaFoo"` is created
+3. `name1` now points to `"JamilaFoo"`
+4. Other references (`name3`, `name4`) still point to `"Jamila"`
 
 📌 **Only the reference changes, not the original object**
 
