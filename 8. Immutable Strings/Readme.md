@@ -24,16 +24,20 @@
 Example:
 
 ```java
-String name1 = "Alex";
+String name1 = "Jamila";
 String name2 = "Alex";
+String name3 = "Jamila";
+String name4 = "Jamila";
 ```
 
-Both `name1` and `name2` point to **the same `"Alex"` object** in the String Pool.
+All `name1`, `name3` and `name4` point to **the same `"Jamila"` object** in the String Pool.
 This is exactly what the first picture shows.
 
 ---
 
 ## 2️⃣ What If Strings Were Mutable? (The Core Problem)
+
+![Viz2](pics/Viz2.jpg)
 
 Assume **Strings were mutable**.
 
