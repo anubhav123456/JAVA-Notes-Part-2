@@ -30,16 +30,16 @@
 
 ```java
 String name1 = "Jamila";
-String name2 = "Jamila";
-String name3 = "Alex";
+String name2 = "Alex";
+String name3 = new String("Jamila");
 ```
 
-### What happens (as shown in diagram):
+### What happens :
 
 * `"Jamila"` is created **once** in the **String Pool**
 * `"Alex"` is created **once** in the **String Pool**
-* `name1` and `name2` both **point to the same `"Jamila"` object**
-* `name3` points to `"Alex"`
+* `name1` and `name3` both **point to the same `"Jamila"` object**
+* `name2` points to `"Alex"`
 
 📌 **Important**
 
@@ -51,7 +51,7 @@ String name3 = "Alex";
 ✔️ **Fast comparison using `==`**
 
 ```java
-name1 == name2   // true (same reference)
+name1 == name3   // false (different memory location)
 ```
 
 ---
@@ -61,7 +61,7 @@ name1 == name2   // true (same reference)
 ### Example:
 
 ```java
-String name4 = new String("Jamila");
+String name3 = new String("Jamila");
 ```
 
 ### What happens (shown as yellow object in diagram):
@@ -70,7 +70,7 @@ String name4 = new String("Jamila");
 
    * `"Jamila"` already exists → reused in pool
 2. A **new String object** is created in the **Heap**
-3. `name4` points to this **new Heap object**
+3. `name3` points to this **new Heap object**
 4. Heap object internally refers to `"Jamila"` from pool
 
 📌 **Key point**
@@ -78,8 +78,8 @@ String name4 = new String("Jamila");
 * Even though text is same, **object is different**
 
 ```java
-name1 == name4   // false (different memory locations)
-name1.equals(name4) // true (same content)
+name1 == name3   // false (different memory locations)
+name1.equals(name3) // true (same content)
 ```
 
 ---
@@ -89,9 +89,8 @@ name1.equals(name4) // true (same content)
 | Variable | Points to                 |
 | -------- | ------------------------- |
 | `name1`  | `"Jamila"` in String Pool |
-| `name2`  | `"Jamila"` in String Pool |
-| `name3`  | `"Alex"` in String Pool   |
-| `name4`  | `"Jamila"` object in Heap |
+| `name2`  | `"Alex"` in String Pool |
+| `name3`  | `"Jamila"` object in Heap |
 
 ---
 
