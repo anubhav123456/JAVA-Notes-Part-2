@@ -1,4 +1,4 @@
 ![Code 1](pics/Code1.jpg)
-![Visuaization 1](pics/Visuaization1.jpg)
+![Visualization 1](pics/Visualization1.jpg)
 ![Code 2](pics/Code2.jpg)
-![Visuaization 2](pics/Visuaization2.jpg)
+![Visualization 2](pics/Visualization2.jpg)
