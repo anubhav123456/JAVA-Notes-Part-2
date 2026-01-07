@@ -31,14 +31,13 @@
 ```java
 String name1 = "Jamila";
 String name2 = "Alex";
-String name3 = new String("Jamila");
 ```
 
 ### What happens :
 
 * `"Jamila"` is created **once** in the **String Pool**
 * `"Alex"` is created **once** in the **String Pool**
-* `name1` and `name3` both **point to the same `"Jamila"` object**
+* `name1` points to `"Jamila"`
 * `name2` points to `"Alex"`
 
 📌 **Important**
@@ -51,7 +50,7 @@ String name3 = new String("Jamila");
 ✔️ **Fast comparison using `==`**
 
 ```java
-name1 == name3   // false (different memory location)
+name1 == name2   // false (different objects)
 ```
 
 ---
